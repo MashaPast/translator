@@ -1,0 +1,4 @@
+1. connection to db
+2. create table in db, 3 columns (id, word, translate) in pgadmin
+3. in handler "translate" save the word and its translation (insert into table)
+4. get rq for printing all words from database
