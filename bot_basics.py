@@ -20,7 +20,7 @@ def list_all_words(message: telebot.types.Message):
     appLogger.debug('Processing list words request')
     answer_from_db = (connection.select_to_db(message.from_user.id))
     answer_from_bot = ""
-    for i in range(len(answer_from_db) - 10, len(answer_from_db)):
+    for i in range((len(answer_from_db) - 1), -1, -1):
         str_of_word = answer_from_db[i]['translate']
         str_of_translate = answer_from_db[i]['word']
         answer_from_bot += flag.flagize(":GB:") + str_of_word + " - " + flag.flagize(":RU:") + str_of_translate + "\n"

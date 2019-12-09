@@ -22,14 +22,16 @@ class Connection:
     def insert_into_db(self, word, translate, user_id):
         cursor = self.connection_to_db.cursor()
         insert_words = '''INSERT INTO dict_for_bot (WORD_IN_ENG, WORD_TRANSLATION, USER_ID) VALUES (%s, %s, %s)'''
-        values_to_insert = (word, translate, user_id)
+        values_to_insert: list = [word, translate, user_id]
         cursor.execute(insert_words, values_to_insert)
         self.connection_to_db.commit()
 
-    def select_to_db(self) -> list:
+    def select_to_db(self, user_id) -> list:
+        appLogger.debug("Selecting words from db")
         cursor = self.connection_to_db.cursor()
-        select_list_words = """select * from dict_for_bot"""
-        cursor.execute(select_list_words)
+        select_list_words = '''SELECT * FROM dict_for_bot WHERE USER_ID = %s order by ID desc LIMIT 10'''
+        values_to_select: list = [user_id]
+        cursor.execute(select_list_words, values_to_select)
         rows: list = cursor.fetchall()
         appLogger.debug('Words listed from db')
         words = []
