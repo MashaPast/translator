@@ -15,18 +15,18 @@ def start_message(message: telebot.types.Message):
     keyboard1.row('hi', 'quit', 'thank you', 'help')
     bot.send_message(message.chat.id, 'Hi', reply_markup=keyboard1)
 
+
 @bot.message_handler(commands=['help'])
 def help_message(message: telebot.types.Message):
     bot.send_message(message.chat.id, "This is a bot for translating words from English into Russian. \n" 
                                       "\n"
+                                      "Send me any word or phrase in English to get its translation. \n"
+                                      "\n"
                                       "Use command '/start' to see keyboard options: hi, quit, thank you and help. \n"
-                                       "\n"
-                                      "Use command '/translate' in format '/translate your_word' to get translation. \n"
                                       "\n"
                                       "Use command '/list_my_words' to get list of last 10 words you requested me to translate. \n"
                                       "\n"
                                     "Translated by the Yandex.Translate service: http://translate.yandex.ru")
-
 
 
 @bot.message_handler(commands=['list_my_words'])
@@ -42,29 +42,6 @@ def list_all_words(message: telebot.types.Message):
     bot.send_message(message.chat.id, answer_from_bot)
 
 
-def return_param(message_to_translate: str):
-    list_to_trnsl = message_to_translate.split()[1:]
-    str_to_trnsl = ','.join(list_to_trnsl)
-    return str_to_trnsl
-
-
-@bot.message_handler(commands=['translate'])
-def translate(message):
-    try:
-        word_to_translate = return_param(message.text)
-        appLogger.debug('Getting translate from API')
-        translate: str = translator.get_translation(word_to_translate.lower())
-        if not word_to_translate == translate:
-            connection.insert_into_db(word_to_translate.lower(), translate, message.from_user.id)
-            appLogger.debug("New word and translate inserted successfully into table")
-            bot.send_message(message.chat.id, 'translation of your word:\n' + str(translate) + "\n" + "\n"
-                             + "Translated by the Yandex.Translate service: http://translate.yandex.ru")
-        else:
-            bot.send_message(message.chat.id, 'You sent inappropriate word')
-    except KeyError:
-        bot.send_message(message.chat.id, "Add word you want to translate in format '/translate your_word'")
-
-
 @bot.message_handler(content_types=['text'])
 def answer_text(message: telebot.types.Message):
     if message.text.lower() == 'quit':
@@ -75,7 +52,20 @@ def answer_text(message: telebot.types.Message):
         bot.send_sticker(message.chat.id, 'CAADBAADCQADDzYrCWNaDCjhhrNPFgQ')
     elif message.text.lower() == 'help':
         help_message(message)
-
+    else:
+        try:
+            word_to_translate = message.text
+            appLogger.debug('Getting translate from API')
+            translate: str = translator.get_translation(word_to_translate.lower())
+            if not word_to_translate == translate:
+                connection.insert_into_db(word_to_translate.lower(), translate, message.from_user.id)
+                appLogger.debug("New word and translate inserted successfully into table")
+                bot.send_message(message.chat.id, 'translation of your word:\n' + str(translate) + "\n" + "\n"
+                                 + "Translated by the Yandex.Translate service: http://translate.yandex.ru")
+            else:
+                bot.send_message(message.chat.id, 'You sent inappropriate word')
+        except KeyError:
+            bot.send_message(message.chat.id, "Send me any word or phrase in English to get its translation")
 
 
 @bot.message_handler(content_types=['sticker'])

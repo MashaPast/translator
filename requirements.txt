@@ -4,3 +4,4 @@ emoji_country_flag==1.1.0
 flag==0.1.1
 psycopg2==2.8.4
 pyTelegramBotAPI==3.6.6
+telebot

@@ -2,3 +2,10 @@
 2. create table in db, 3 columns (id, word, translate) in pgadmin
 3. in handler "translate" save the word and its translation (insert into table)
 4. get rq for printing all words from database
+
+
+for command translate for one word:
+# def return_param(message_to_translate: str):
+#     list_to_trnsl = message_to_translate.split()[1:]
+#     str_to_trnsl = ','.join(list_to_trnsl)
+#     return str_to_trnsl
