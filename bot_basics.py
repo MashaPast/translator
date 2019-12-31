@@ -2,11 +2,15 @@ import telebot
 from modules.translate_api import translator
 from modules.db_connection import connection
 from logger import appLogger
-from config import config
 import flag
+from telebot import apihelper
+from config import config
 
 
 bot = telebot.TeleBot(config['TelegramAPI']['token'])
+pr_config = config['Proxy']
+apihelper.proxy = {'https': pr_config['proxy'] + pr_config['userproxy'] + ':' + pr_config['password'] + '@'
+                   + pr_config['proxy_address'] + ':' + pr_config['port']}
 
 
 @bot.message_handler(commands=['start'])
@@ -52,6 +56,9 @@ def answer_text(message: telebot.types.Message):
         bot.send_sticker(message.chat.id, 'CAADBAADCQADDzYrCWNaDCjhhrNPFgQ')
     elif message.text.lower() == 'help':
         help_message(message)
+    elif message.text.lower() == 'receive a gift':
+        file = open('best_gift.pdf', 'rb')
+        bot.send_document(message.chat.id, file)
     else:
         try:
             word_to_translate = message.text
