@@ -8,7 +8,7 @@ def runServer():
     app.run(debug=True, port=config['Server']['port'])
 
 
-if __name__ == "__main__":
-    runServer()
+# if __name__ == "__main__":
+#     runServer()
 
 

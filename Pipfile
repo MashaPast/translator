@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = "==2.18.4"
+emoji-country-flag = "==1.1.0"
+psycopg2 = "==2.8.4"
+Flask = "==1.1.1"
+Flag = "==0.1.1"
+pyTelegramBotAPI = "==3.6.6"
+pytest = "*"
+
+[requires]
+python_version = "3.7"
