@@ -10,24 +10,42 @@ handlers = Blueprint('handlers', __name__)
 
 
 @handlers.route('/translate', methods=['POST'])
-def translate_route() -> str:
+def translate_route() -> (str, int):
     appLogger.debug('Processing translate request')
-    req_body: dict = request.get_json()
-    print(req_body)
-    word: str = req_body['word']
-    translate: str = translator.get_translation(word)
-    word_dict: Dict[str, str] = {'word': word, 'translate': translate}
-    connection.add_word(word, translate)
-    appLogger.debug("Record inserted successfully into table")
-    return jsonify(word_dict)
+    try:
+        req_body: dict = request.get_json()
+        word: str = req_body['word']
+        user_id: str = req_body['user_id']
+    except Exception as err: #dif exc
+        appLogger.error("Bad request error", err)
+        data = {"message": "Bad request error"}
+        return jsonify(data), 400
+
+    try:
+        translate: str = translator.get_translation(word)
+        word_dict: Dict[str, str] = {'word': word, 'translate': translate}
+        connection.add_word(word, translate, user_id)
+        appLogger.debug("Record inserted successfully into table")
+        return jsonify(word_dict)
+    except Exception as err: #dif exc
+        appLogger.error("Error to get response from Yandex API", err)
+        data = {"message": "Internal server error"}
+        return jsonify(data), 500
 
 
-@handlers.route('/list_words')
-def list_words() -> str:
+@handlers.route('/list_words', methods=['POST'])
+def list_words() -> (str, int):
     appLogger.debug('Processing list words request')
-    return jsonify(connection.get_words())
+    req_body: dict = request.get_json()
+    user_id: str = req_body['user_id']
+    try:
+        return jsonify(connection.get_words(user_id))
+    except Exception as e:
+        data = {"message": "Internal server error"}
+        return jsonify(data), 500
 
-@handlers.route('/list_users_id')
+
+@handlers.route('/list_users_id', methods=['GET'])
 def list_users_id() -> (str, int):
     appLogger.debug('Printing unique user_id')
     try:
@@ -39,7 +57,7 @@ def list_users_id() -> (str, int):
 
 
 @handlers.route('/delete_user', methods=['DELETE'])
-def delete_user():
+def delete_user() -> (str, int):
     appLogger.debug('Processing delete user')
     req_body: dict = request.get_json()
     user_id: str = req_body['user_id']

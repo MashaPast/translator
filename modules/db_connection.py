@@ -20,28 +20,37 @@ class Connection:
                                                  database=self.database)
 
     def add_word(self, word, translate, user_id):
-        cursor = self.connection_to_db.cursor()
-        insert_words = '''INSERT INTO dict (WORD_ENG, WORD_TRANSLATION, USER_ID) VALUES (%s, %s, %s)'''
-        values_to_insert: list = [word, translate, user_id]
-        cursor.execute(insert_words, values_to_insert)
-        self.connection_to_db.commit()
+        try:
+            appLogger.debug("Adding word to database")
+            cursor = self.connection_to_db.cursor()
+            insert_words = '''INSERT INTO dict (WORD_ENG, WORD_TRANSLATION, USER_ID) VALUES (%s, %s, %s)'''
+            values_to_insert: list = [word, translate, user_id]
+            cursor.execute(insert_words, values_to_insert)
+            self.connection_to_db.commit()
+        except Exception as err:
+            appLogger.error(err)
+            raise err
 
     def get_words(self, user_id) -> list:
         appLogger.debug("Selecting words from db")
         cursor = self.connection_to_db.cursor()
         select_list_words = '''SELECT * FROM dict WHERE USER_ID = %s order by ID desc LIMIT 10'''
         values_to_select: list = [user_id]
-        cursor.execute(select_list_words, values_to_select)
-        rows: list = cursor.fetchall()
-        appLogger.debug('Words listed from db')
-        words = []
-        for row in rows:
-            word_dict = {
-                'word': row[1],
-                'translate': row[2]
-            }
-            words.append(word_dict)
-        return words
+        try:
+            cursor.execute(select_list_words, values_to_select)
+            rows: list = cursor.fetchall()
+            appLogger.debug('Words listed from db')
+            words = []
+            for row in rows:
+                word_dict = {
+                    'word': row[1],
+                    'translate': row[2]
+                }
+                words.append(word_dict)
+            return words
+        except Exception as err:
+            appLogger.error(err)
+            raise err
 
     def get_users_and_words(self) -> list:
         appLogger.debug('Selecting unique users')
@@ -53,8 +62,8 @@ class Connection:
             user_id_words = []
             for row in list_of_users_and_words:
                 user_dict = {
-                    'user id': row[0],
-                    'number of words of the user': row[1]
+                    'user_id': row[0],
+                    'num_of_user_words': row[1]
                 }
                 user_id_words.append(user_dict)
             return user_id_words

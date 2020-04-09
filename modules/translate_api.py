@@ -16,13 +16,17 @@ class TranslateApi:
         self.lang = lang
 
     def get_translation(self, text: str) -> str:
-        appLogger.debug('Getting response from server')
+        appLogger.debug('Making request to ya API')
         url = '{}?key={}&text={}&lang={}'.format(self.url, self.key, text, self.lang)
-        response: requests.Response = requests.get(url)  # api
-        word_data: Dict[str, any] = response.json()
-        appLogger.info('Getting translate')
-        translate: str = word_data['text'][0]
-        return translate
+        try:
+            response: requests.Response = requests.get(url)  # api
+            word_data: Dict[str, any] = response.json()
+            appLogger.info('Parsing translate response')
+            translate: str = word_data['text'][0]
+            return translate
+        except Exception as err:
+            appLogger.error("Error to get response from Yandex API", err)
+            raise err
 
 
 translate_config = config['YandexTranslateAPI']
