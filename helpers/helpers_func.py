@@ -9,11 +9,7 @@ def make_get_request(full_url):
     return response
 
 
-def make_post_request_to_translate(full_url):
-    data = {
-        "word": "flower",
-        "user_id": "24"
-    }
+def make_post_request_to_translate(full_url, data):
     header = {"content-type": "application/json"}
     response = requests.post(full_url, data=json.dumps(data), headers=header)
     appLogger.debug("Response status is {}".format(response.status_code))
