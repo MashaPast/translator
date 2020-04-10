@@ -33,11 +33,17 @@ def translate_route() -> (str, int):
         return jsonify(data), 500
 
 
-@handlers.route('/list_words', methods=['POST'])
+@handlers.route('/list_words_by_id', methods=['POST'])
 def list_words() -> (str, int):
-    appLogger.debug('Processing list words request')
-    req_body: dict = request.get_json()
-    user_id: str = req_body['user_id']
+    try:
+        appLogger.debug('Processing list words request')
+        req_body: dict = request.get_json()
+        user_id: str = req_body['user_id']
+    except Exception as err:
+        appLogger.error("Bad request error", err)
+        data = {"message": "Bad request error"}
+        return jsonify(data), 400
+
     try:
         return jsonify(connection.get_words(user_id))
     except Exception as e:
@@ -58,9 +64,14 @@ def list_users_id() -> (str, int):
 
 @handlers.route('/delete_user', methods=['DELETE'])
 def delete_user() -> (str, int):
-    appLogger.debug('Processing delete user')
-    req_body: dict = request.get_json()
-    user_id: str = req_body['user_id']
+    try:
+        appLogger.debug('Processing delete user')
+        req_body: dict = request.get_json()
+        user_id: str = req_body['user_id']
+    except Exception as err: #dif exc
+        appLogger.error("Bad request error", err)
+        data = {"message": "Bad request error"}
+        return jsonify(data), 400
     try:
         connection.delete_user(user_id)
         appLogger.debug("Record deleted successfully from the table")

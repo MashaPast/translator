@@ -1,0 +1,91 @@
+[ {
+  "uid" : "38c22cf10bc6eb80",
+  "name" : "test_translate_response_400",
+  "time" : {
+    "start" : 1586528851452,
+    "stop" : 1586528851456,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "af50ca7e4b98e790",
+  "name" : "test_translate[word_and_id0]",
+  "time" : {
+    "start" : 1586528851469,
+    "stop" : 1586528851812,
+    "duration" : 343
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5d50ebef9772cef9",
+  "name" : "test_list_words_by_id[user_id0]",
+  "time" : {
+    "start" : 1586528852154,
+    "stop" : 1586528852163,
+    "duration" : 9
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d631d7811b3ea0f4",
+  "name" : "test_list_users_id_response",
+  "time" : {
+    "start" : 1586528852133,
+    "stop" : 1586528852146,
+    "duration" : 13
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6cc6f37e9535d0a1",
+  "name" : "test_list_words_by_id_response_400",
+  "time" : {
+    "start" : 1586528851458,
+    "stop" : 1586528851461,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "87cdb2bb1b87e35a",
+  "name" : "test_delete_user_response_400",
+  "time" : {
+    "start" : 1586528851463,
+    "stop" : 1586528851467,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7084a0e59ff66a64",
+  "name" : "test_translate[word_and_id1]",
+  "time" : {
+    "start" : 1586528851816,
+    "stop" : 1586528852126,
+    "duration" : 310
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "87083a3dd6dd5a1a",
+  "name" : "test_delete_user",
+  "time" : {
+    "start" : 1586528852175,
+    "stop" : 1586528852425,
+    "duration" : 250
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d71b7ae99b4a5d14",
+  "name" : "test_list_words_by_id[user_id1]",
+  "time" : {
+    "start" : 1586528852167,
+    "stop" : 1586528852172,
+    "duration" : 5
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

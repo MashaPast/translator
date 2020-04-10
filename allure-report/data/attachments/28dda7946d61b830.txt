@@ -1,0 +1,13 @@
+2020-04-10 17:27:32,175 DEBUG Starting new HTTP connection (1): 127.0.0.1
+2020-04-10 17:27:32,397 DEBUG http://127.0.0.1:5000 "POST /translate HTTP/1.1" 200 79
+2020-04-10 17:27:32,399 DEBUG Response status is 200
+2020-04-10 17:27:32,402 DEBUG Starting new HTTP connection (1): 127.0.0.1
+2020-04-10 17:27:32,408 DEBUG http://127.0.0.1:5000 "GET /list_users_id HTTP/1.1" 200 245
+2020-04-10 17:27:32,410 DEBUG Response status is 200
+2020-04-10 17:27:32,410 DEBUG Getting response body from API
+2020-04-10 17:27:32,414 DEBUG Starting new HTTP connection (1): 127.0.0.1
+2020-04-10 17:27:32,422 DEBUG http://127.0.0.1:5000 "DELETE /delete_user HTTP/1.1" 200 188
+2020-04-10 17:27:32,423 DEBUG Response status is 200
+2020-04-10 17:27:32,423 DEBUG Request completed in 9.549999999999999 ms
+2020-04-10 17:27:32,424 DEBUG Getting response body from API
+2020-04-10 17:27:32,424 INFO Check type 0<class 'dict'>

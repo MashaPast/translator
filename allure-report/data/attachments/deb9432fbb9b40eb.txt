@@ -1,0 +1,6 @@
+2020-04-10 17:27:32,137 DEBUG Starting new HTTP connection (1): 127.0.0.1
+2020-04-10 17:27:32,143 DEBUG http://127.0.0.1:5000 "GET /list_users_id HTTP/1.1" 200 188
+2020-04-10 17:27:32,144 DEBUG Response status is 200
+2020-04-10 17:27:32,145 DEBUG Request completed in 7.845 ms
+2020-04-10 17:27:32,145 DEBUG Getting response body from API
+2020-04-10 17:27:32,145 INFO Check type 0<class 'dict'>

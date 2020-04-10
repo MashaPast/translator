@@ -13,6 +13,7 @@ Flask = "==1.1.1"
 Flag = "==0.1.1"
 pyTelegramBotAPI = "==3.6.6"
 pytest = "*"
+allure-pytest = "==2.8.13"
 
 [requires]
 python_version = "3.7"

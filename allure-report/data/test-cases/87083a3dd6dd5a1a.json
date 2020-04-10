@@ -1,0 +1,78 @@
+{
+  "uid" : "87083a3dd6dd5a1a",
+  "name" : "test_delete_user",
+  "fullName" : "test_API.test_admin_API_positive_tests#test_delete_user",
+  "historyId" : "78f0c78168c3e223c8e259972479fda5",
+  "time" : {
+    "start" : 1586528852175,
+    "stop" : 1586528852425,
+    "duration" : 250
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1a2886a9084f9163",
+      "name" : "log",
+      "source" : "1a2886a9084f9163.txt",
+      "type" : "text/plain",
+      "size" : 1179
+    }, {
+      "uid" : "28dda7946d61b830",
+      "name" : "stderr",
+      "source" : "28dda7946d61b830.txt",
+      "type" : "text/plain",
+      "size" : 898
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "happypath"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_API"
+  }, {
+    "name" : "suite",
+    "value" : "test_admin_API_positive_tests"
+  }, {
+    "name" : "host",
+    "value" : "local"
+  }, {
+    "name" : "thread",
+    "value" : "11198-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_API.test_admin_API_positive_tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "happypath" ]
+  },
+  "source" : "87083a3dd6dd5a1a.json",
+  "parameterValues" : [ ]
+}

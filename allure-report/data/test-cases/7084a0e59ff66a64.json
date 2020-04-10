@@ -1,0 +1,81 @@
+{
+  "uid" : "7084a0e59ff66a64",
+  "name" : "test_translate[word_and_id1]",
+  "fullName" : "test_API.test_admin_API_positive_tests#test_translate",
+  "historyId" : "c6f93fc82a96ee3f330ece04acfd26bc",
+  "time" : {
+    "start" : 1586528851816,
+    "stop" : 1586528852126,
+    "duration" : 310
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ac5a93a363bb077d",
+      "name" : "log",
+      "source" : "ac5a93a363bb077d.txt",
+      "type" : "text/plain",
+      "size" : 438
+    }, {
+      "uid" : "b69dbfee4540105c",
+      "name" : "stderr",
+      "source" : "b69dbfee4540105c.txt",
+      "type" : "text/plain",
+      "size" : 337
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "happypath"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_API"
+  }, {
+    "name" : "suite",
+    "value" : "test_admin_API_positive_tests"
+  }, {
+    "name" : "host",
+    "value" : "local"
+  }, {
+    "name" : "thread",
+    "value" : "11198-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_API.test_admin_API_positive_tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "word_and_id",
+    "value" : "{'word': '1321', 'user_id': '24'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "happypath" ]
+  },
+  "source" : "7084a0e59ff66a64.json",
+  "parameterValues" : [ "{'word': '1321', 'user_id': '24'}" ]
+}

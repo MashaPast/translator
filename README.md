@@ -29,10 +29,49 @@ The Delete user endpoint provides removing user by his id
 
 ## Bot API
 
-* Use command '/start' to see keyboard options.
+* Use command '/help' to see bot options.
+
+![help](/images/help.png)
+
 * Use command '/translate' in format '/translate your_word' to get translation.
+
+![translate](/images/translate_hi.png)
 * Use command '/list_my_words' to get list of last 10 words you requested me to translate. 
 
+![list_my_words](/images/list_my_words.png)
+
+* Send 'thank you' to get a sticker.
+
 ## Running the tests
+* Running all tests
+```bash
+pytest -s -v test_API/
+```
+* Selecting marked test functions for a run
+```bash
+pytest -v -m negative
+```
 
 ## Allure report
+
+* Generating Allure test report
+
+```bash
+pytest --alluredir=./results test_API/
+allure generate ./results -o ./allure-report
+```
+* Opening Allure test report in browser 
+```bash
+allure open allure-report/
+```
+Allure overview page
+
+![allure_report_overview](/images/allure_report_overview.png)
+
+Allure test suits page
+
+![allure_test_suits](/images/allure_test_suits.png)
+
+Allure graphs
+
+![allure_graphs](/images/allure_graphs.png)

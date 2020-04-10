@@ -1,0 +1,78 @@
+{
+  "uid" : "38c22cf10bc6eb80",
+  "name" : "test_translate_response_400",
+  "fullName" : "test_API.test_admin_API_negative_tests#test_translate_response_400",
+  "historyId" : "2bdf35c0e9b91fdd90d0d36439c7e3a6",
+  "time" : {
+    "start" : 1586528851452,
+    "stop" : 1586528851456,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "5275d03010557d5c",
+      "name" : "log",
+      "source" : "5275d03010557d5c.txt",
+      "type" : "text/plain",
+      "size" : 435
+    }, {
+      "uid" : "774b5632698694db",
+      "name" : "stderr",
+      "source" : "774b5632698694db.txt",
+      "type" : "text/plain",
+      "size" : 334
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_API"
+  }, {
+    "name" : "suite",
+    "value" : "test_admin_API_negative_tests"
+  }, {
+    "name" : "host",
+    "value" : "local"
+  }, {
+    "name" : "thread",
+    "value" : "11198-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_API.test_admin_API_negative_tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative" ]
+  },
+  "source" : "38c22cf10bc6eb80.json",
+  "parameterValues" : [ ]
+}

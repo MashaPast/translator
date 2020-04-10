@@ -15,22 +15,17 @@ def make_post_request_to_translate(full_url, data):
     appLogger.debug("Response status is {}".format(response.status_code))
     return response
 
-def make_post_request_to_list_words(full_url):
-    data = {
-        "user_id": "24"
-    }
+
+def make_post_request_to_list_words(full_url, id):
     header = {"content-type": "application/json"}
-    response = requests.post(full_url, data=json.dumps(data), headers=header)
+    response = requests.post(full_url, data=json.dumps(id), headers=header)
     appLogger.debug("Response status is {}".format(response.status_code))
     return response
 
 
-def make_del_request(full_url):
-    data = {
-        "user_id": "22"
-    }
+def make_del_request(full_url, id):
     header = {"content-type": "application/json"}
-    response = requests.delete(full_url, data=json.dumps(data), headers=header)
+    response = requests.delete(full_url, data=json.dumps(id), headers=header)
     appLogger.debug("Response status is {}".format(response.status_code))
     return response
 

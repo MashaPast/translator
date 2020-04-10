@@ -1,0 +1,5 @@
+2020-04-10 17:27:31,453 DEBUG Starting new HTTP connection (1): 127.0.0.1
+2020-04-10 17:27:31,454 DEBUG http://127.0.0.1:5000 "POST /translate HTTP/1.1" 400 37
+2020-04-10 17:27:31,455 DEBUG Response status is 400
+2020-04-10 17:27:31,455 DEBUG Request completed in 2.373 ms
+2020-04-10 17:27:31,455 DEBUG Getting response body from API

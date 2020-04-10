@@ -1,0 +1,5 @@
+2020-04-10 17:27:31,458 DEBUG Starting new HTTP connection (1): 127.0.0.1
+2020-04-10 17:27:31,460 DEBUG http://127.0.0.1:5000 "POST /list_words_by_id HTTP/1.1" 400 37
+2020-04-10 17:27:31,460 DEBUG Response status is 400
+2020-04-10 17:27:31,460 DEBUG Request completed in 2.181 ms
+2020-04-10 17:27:31,460 DEBUG Getting response body from API
