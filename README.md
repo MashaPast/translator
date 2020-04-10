@@ -1,6 +1,31 @@
 # Telegram Translator Bot
-Telegram Translator Bot (TTB) is an application that runs inside Telegram and translates english words into russian. 
+Telegram Translator Bot (TTB) is an application that translates english words into russian and saves them to the database. 
 TTB uses HTTP-based [Telegram Bot API](https://core.telegram.org/bots/api) and [Yandex Translator API](https://yandex.ru/dev/translate/doc/dg/concepts/about-docpage/). 
+
+## Prerequisites
+Your system should have the following to run TTB:
+* Python_version = "3.7"
+* PostgreSQL database version > 10
+* Yandex Translator API Key
+* Authorization token for Telegram bot
+
+## Bot API
+
+* Use command '/help' to see bot options.
+
+![help](/images/help.png) <img src="/images/help.png" width=300 align=right>
+
+* Use command '/translate' in format '/translate your_word' to get translation.
+
+![translate](/images/translate_hi.png)
+
+* Use command '/list_my_words' to get list of last 10 words you requested me to translate. 
+
+![list_my_words](/images/list_my_words.png)
+
+* Send 'thank you' to get a sticker.
+
+![list_my_words](/images/thank_you.png)
                                  
 ## Admin API
 ###  Translate 
@@ -26,21 +51,6 @@ The List words endpoint provides words of user by his id
 The Delete user endpoint provides removing user by his id 
 
 ![delete_user endpoint](/images/delete_user.png)
-
-## Bot API
-
-* Use command '/help' to see bot options.
-
-![help](/images/help.png)
-
-* Use command '/translate' in format '/translate your_word' to get translation.
-
-![translate](/images/translate_hi.png)
-* Use command '/list_my_words' to get list of last 10 words you requested me to translate. 
-
-![list_my_words](/images/list_my_words.png)
-
-* Send 'thank you' to get a sticker.
 
 ## Running the tests
 * Running all tests
