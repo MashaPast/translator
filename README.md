@@ -13,19 +13,19 @@ Your system should have the following to run TTB:
 
 * Use command '/help' to see bot options.
 
-![help](/images/help.png) <img src="/images/help.png" width=300 align=left>
+<img src="/images/help.png" width=300 align=left>
 
 * Use command '/translate' in format '/translate your_word' to get translation.
 
-![translate](/images/translate_hi.png) <img src="/images/translate_hi.png" width=300 align=left>
+<img src="/images/translate_hi.png" width=300 align=left>
 
 * Use command '/list_my_words' to get list of last 10 words you requested me to translate. 
 
-![list_my_words](/images/list_my_words.png) <img src="/images/list_my_words.png" width=300 align=left>
+<img src="/images/list_my_words.png" width=300 align=left>
 
 * Send 'thank you' to get a sticker.
 
-![list_my_words](/images/thank_you.png) <img src="/images/thank_you.png" width=300 align=left>
+<img src="/images/thank_you.png" width=300 align=left>
                                  
 ## Admin API
 ###  Translate 
