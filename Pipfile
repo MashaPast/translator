@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-requests = "==2.18.4"
+requests = "==2.20.0"
 emoji-country-flag = "==1.1.0"
 psycopg2 = "==2.8.4"
 Flask = "==1.1.1"
