@@ -1,6 +1,10 @@
 # Telegram Translator Bot
-Telegram Translator Bot (TTB) is an application that translates english words into russian and saves them to the database. 
+Telegram Translator Bot (TTB) is an application that translates English words into Russian and saves them to the database. 
 TTB uses HTTP-based [Telegram Bot API](https://core.telegram.org/bots/api) and [Yandex Translator API](https://yandex.ru/dev/translate/doc/dg/concepts/about-docpage/). 
+TTB provides two main commands: '/translate' command for translation of words and '/list_my_words' command for getting list of last 10 words, which user requested bot to translate.
+To see bot options use command '/help'. The Admin API is developed, it is implemented with four endpoints and HTTP methods: Translate (POST method), List users id(GET method), List words by id(POST method), 
+Delete user(DELETE method). The Admin API uses PostgreSQL database to store data. Tests for the Admin API are written with pytest framework using python. Test functions are marked for happypath and negative scenarios. 
+Test report is generated with Allure test reporting tool. All prerequisites, instructions for running the tests and generating Allure report are presented in README.md on GitHub.
 
 ## Prerequisites
 Your system should have the following to run TTB:
@@ -13,19 +17,19 @@ Your system should have the following to run TTB:
 
 * Use command '/help' to see bot options.
 
-![help](/images/help.png) <!-- .element height="50%" width="50%" -->
+![help](/images/help.png) <img src="/images/help.png" width=300 align=center>
 
 * Use command '/translate' in format '/translate your_word' to get translation.
 
-![translate](/images/translate_hi.png) <!-- .element height="50%" width="50%" -->
+![translate](/images/translate_hi.png) <img src="/images/translate_hi.png" width=300 align=center>
 
 * Use command '/list_my_words' to get list of last 10 words you requested me to translate. 
 
-![list_my_words](/images/list_my_words.png) <!-- .element height="50%" width="50%" -->
+![list_my_words](/images/list_my_words.png) <img src="/images/list_my_words.png" width=300 align=center>
 
 * Send 'thank you' to get a sticker.
 
-![list_my_words](/images/thank_you.png) <!-- .element height="50%" width="50%" -->
+![list_my_words](/images/thank_you.png) <img src="/images/thank_you.png" width=300 align=center>
                                  
 ## Admin API
 ###  Translate 
@@ -42,7 +46,7 @@ The List users id endpoint provides number of requested words of each user.
 
 ###  List words
 
-The List words endpoint provides words of user by his id
+The List words by id endpoint provides words of user by his id
 
 ![list_words endpoint](/images/list_words.png)
 
