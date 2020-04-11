@@ -54,7 +54,7 @@ Your system should have the following to run TTB:
 
 ![list_users_id endpoint](/images/list_users_id.png)
 
-###  List words
+###  List words by id
 
 'POST /list_words_by_id' endpoint provides words of user by his id
 
