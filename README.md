@@ -3,7 +3,7 @@ Telegram Translator Bot (TTB) is an application that translates English words in
 TTB uses HTTP-based [Telegram Bot API](https://core.telegram.org/bots/api) and [Yandex Translator API](https://yandex.ru/dev/translate/doc/dg/concepts/about-docpage/). 
 TTB provides two main commands: '/translate' command for translation of words and '/list_my_words' command for getting list of last 10 words, which user requested bot to translate.
 To see bot options use command '/help'. The Admin API is developed, it is implemented with four endpoints and HTTP methods: Translate (POST method), List users id(GET method), List words by id(POST method), 
-Delete user(DELETE method). The Admin API uses PostgreSQL database to store data. Tests for the Admin API are written with pytest framework using python. Test functions are marked for happypath and negative scenarios. 
+Delete user(DELETE method). All the methods are shown in Postman screenshots. The Admin API uses PostgreSQL database to store data. Tests for the Admin API are written with pytest framework using python. Test functions are marked for happypath and negative scenarios. 
 Test report is generated with Allure test reporting tool. All prerequisites, instructions for running the tests and generating Allure report are presented in README.md on GitHub.
 
 ## Prerequisites
