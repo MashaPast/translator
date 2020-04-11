@@ -27,42 +27,42 @@ Your system should have the following to run TTB:
 
 * Use command '/help' to see bot options.
 
-![help](/images/help.png) <img src="/images/help.png" width=300 align=center>
+<img src="/images/help.png" width=300 align=center>
 
 * Use command '/translate' in format '/translate your_word' to get translation.
 
-![translate](/images/translate_hi.png) <img src="/images/translate_hi.png" width=300 align=center>
+<img src="/images/translate_hi.png" width=300 align=center>
 
 * Use command '/list_my_words' to get list of last 10 words you requested me to translate. 
 
-![list_my_words](/images/list_my_words.png) <img src="/images/list_my_words.png" width=300 align=center>
+<img src="/images/list_my_words.png" width=300 align=center>
 
 * Send 'thank you' to get a sticker.
 
-![list_my_words](/images/thank_you.png) <img src="/images/thank_you.png" width=300 align=center>
+<img src="/images/thank_you.png" width=300 align=center>
                                  
 ## Admin API
 ###  Translate 
 
-The Translate endpoint provides a translation of a word from English into Russian.
+'POST /translate' endpoint provides a translation of a word from English into Russian.
 
 ![translate endpoint](/images/translate.png)
 
 ###  List users id
 
-The List users id endpoint provides number of requested words of each user.
+'GET /list_users_id' endpoint provides number of requested words of each user.
 
 ![list_users_id endpoint](/images/list_users_id.png)
 
 ###  List words
 
-The List words by id endpoint provides words of user by his id
+'POST /list_words_by_id' endpoint provides words of user by his id
 
 ![list_words endpoint](/images/list_words.png)
 
 ###  Delete user
 
-The Delete user endpoint provides removing user by his id 
+'DELETE /delete_user' endpoint provides removing user by his id 
 
 ![delete_user endpoint](/images/delete_user.png)
 
