@@ -1,11 +1,21 @@
 # Telegram Translator Bot
-Telegram Translator Bot (TTB) is an application that translates English words into Russian and saves them to the database. 
-TTB uses HTTP-based [Telegram Bot API](https://core.telegram.org/bots/api) and [Yandex Translator API](https://yandex.ru/dev/translate/doc/dg/concepts/about-docpage/). 
-TTB provides two main commands: '/translate' command for translation of words and '/list_my_words' command for getting list of last 10 words, which user requested bot to translate.
-To see bot options use command '/help'. The Admin API is developed, it is implemented with four endpoints and HTTP methods: Translate (POST method), List users id(GET method), List words by id(POST method), 
-Delete user(DELETE method). All the methods are shown in Postman screenshots. The Admin API uses PostgreSQL database to store data. Tests for the Admin API are written with pytest framework using python. Test functions are marked for happypath and negative scenarios. 
-Test report is generated with Allure test reporting tool. All prerequisites, instructions for running the tests and generating Allure report are presented in README.md on GitHub.
+Telegram Translator Bot (TTB) is an application that translates English words into Russian and stores them for each user in the database. TTB uses HTTP-based [Telegram Bot API](https://core.telegram.org/bots/api) and [Yandex Translator API](https://yandex.ru/dev/translate/doc/dg/concepts/about-docpage/).
+TTB provides three main commands:
+- '/translate' - to translate word
+- '/list_my_words' - to get a list of last 10 words, which user requested the TTB to translate
+- '/help' - to see TTB options
 
+Server application exposes the Admin API, it is implemented with four HTTP endpoints:
+- 'POST /translate' - to translate word
+- 'GET /list_users_id' - to get number of requested words of each user
+- 'POST /list_words_by_id' - to get words of user by his id
+- 'DELETE /delete_user' - to delete user by his id
+
+All the methods are shown in Postman screenshots. Server application utilizes PostgreSQL database to store data.
+
+Tests for the Admin API are written with pytest framework using python 3. Test functions are marked as happypath and negative scenarios.
+
+Test report is generated with Allure test reporting tool. All prerequisites, instructions for running the tests and generating Allure report are presented in README.md on GitHub.
 ## Prerequisites
 Your system should have the following to run TTB:
 * Python_version = "3.7"
