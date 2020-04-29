@@ -1,0 +1,20 @@
+{
+  "apps": [
+    {
+      "name": "test_API",
+      "script": "node",
+      "args": "./build/networkManager.js",
+      "env_development": {
+        "NODE_ENV": "development",
+        "LOG_LEVEL": "debug",
+        "SYSTEM_LOG_LEVEL": "debug",
+        "CONFIGINI_EXTERNAL_SOURCE_FS_PATH": "./config.dev.ini"
+      },
+      "env_stable": {
+        "NODE_ENV": "development",
+        "LOG_LEVEL": "info",
+        "SYSTEM_LOG_LEVEL": "info"
+      }
+    }
+  ]
+}
