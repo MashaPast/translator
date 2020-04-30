@@ -1,0 +1,50 @@
+version: '3.1'
+
+networks:
+  tg_bot:
+
+volumes:
+  postgres_data: {}
+  pgadmin_data: {}
+
+services:
+
+  postgres_server:
+    container_name: tg_bot_pg_server
+    image: postgres:11
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: test123
+      POSTGRES_USER: masha
+      POSTGRES_DB: telegram_bot
+    ports:
+      - 55432:5432
+    restart: always
+    networks:
+      - tg_bot
+
+  pgadmin_server:
+    container_name: pgadmin_server
+    image: dpage/pgadmin4:4.21
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    environment:
+      PGADMIN_LISTEN_PORT: 5555
+      PGADMIN_DEFAULT_EMAIL: masha@local.com
+      PGADMIN_DEFAULT_PASSWORD: 1234
+    ports:
+      - 5555:5555
+    restart: always
+    networks:
+      - tg_bot
+
+  flask_server:
+    container_name: tg_bot_server
+    image: translator:latest
+    restart: always
+    ports:
+      - 8500:5000
+    networks:
+      - tg_bot
+

@@ -4,4 +4,4 @@ venv/
 __pycache__/
 modules/__pycache__/
 routes/__pycache__/
-pm2.json
+
